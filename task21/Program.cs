@@ -12,7 +12,7 @@ double Distance (double xA, double yA, double xB, double yB)
 }
 
 string[] str = {"X точки А","Y точки А","X точки B","Y точки B"};
-double[] input = new int[4];
+double[] input = new double[4];
 for(int i = 0; i < input.Length; i++)
 {
     Console.WriteLine($"Введите координаты {str[i]}");
