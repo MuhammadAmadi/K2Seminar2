@@ -6,18 +6,24 @@
 int inputNum()
 {
     int count = 0;
-    Console.WriteLine("Input number");
-    string str = Convert.ToString(Console.ReadLine());
+    Console.WriteLine("Введите число");
+    string str = Convert.ToString(Console.ReadLine()) ?? String.Empty;
     if (str.All(Char.IsDigit))
     {
         count = str.Length;
+        return count;
     }
-    return count;
+    else
+    {
+        Console.WriteLine("Вы не ввели число");
+        return count;
+    }
+    
 }
 
 void show(int count)
 {
-    Console.WriteLine(count);
+    Console.WriteLine($"Вы ввели {count} цифр");
 }
 
 show(inputNum());
