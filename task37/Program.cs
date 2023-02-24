@@ -9,24 +9,15 @@ int Entry(string msg)
 
 int[] Arr(int[] array)
 {
-    int[] arr;
-    if (array.Length % 2 == 0)
+    int[] arr = new int [array.Length/2+array.Length%2];
+    for (int i = 0; i < array.Length / 2; i++)
     {
-        arr = new int[array.Length / 2];
-        for (int i = 0; i < arr.Length; i++)
-        {
-            arr[i] = array[i] * array[array.Length - 1 - i];
-        }
+        arr[i] = array[i] * array[array.Length - 1 - i];
     }
-    else
-    {
-        arr = new int[array.Length / 2 + 1];
 
-        for (int i = 0; i < arr.Length-1; i++)
-        {
-            arr[i] = array[i] * array[array.Length - 1 - i];
-        }
-        arr[arr.Length-1] = array[arr.Length-1];
+    if (array.Length % 2 > 0)
+    {
+        arr[arr.Length - 1] = array[array.Length / 2];
     }
 
 
@@ -38,7 +29,7 @@ int[] ArrRandom(int lenght)
     int[] arr = new int[lenght];
     for (int i = 0; i < arr.Length; i++)
     {
-        arr[i] = new Random().Next(1,99);
+        arr[i] = new Random().Next(1, 99);
     }
     return arr;
 }
