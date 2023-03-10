@@ -4,13 +4,11 @@
 
 int Sum(int value)
 {
-    if(value < 10)
+    if(value == 0)
     {
-        return value % 10;
+        return 0;
     }
-    int temp = value % 10;
-    value = value/10;
-    return temp + Sum(value);
+    return value % 10 + Sum(value/10);
 }
 
 Console.Write("Введите число");
